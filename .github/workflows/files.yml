@@ -1,0 +1,21 @@
+name: Directory & File Manipulation
+
+# Trigger manually
+on:
+  workflow_dispatch:
+
+jobs:
+  create-directory-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create a new directory
+        run: mkdir -p my_new_dir
+
+      - name: Create a file with text
+        run: echo "Hello, this is a test file!" > my_new_dir/test_file.txt
+
+      - name: Show directory contents
+        run: ls -l my_new_dir
