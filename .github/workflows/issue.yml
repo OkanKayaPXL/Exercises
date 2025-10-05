@@ -1,0 +1,15 @@
+name: issue
+
+# Trigger workflow on new issue
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  show-issue-details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display issue title and body
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
