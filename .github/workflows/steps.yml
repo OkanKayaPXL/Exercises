@@ -26,12 +26,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Create a new directory
-        run: mkdir -p my_new_dir
+        run: mkdir -p testmachine
 
       - name: Run uname and save output
-        run: |
-          mkdir -p testmachine
-          uname -a > testmachine/output.txt
+        run: uname -a > testmachine/output.txt
 
       # Verification step 1: Show the contents of the txt file
       - name: Show output.txt contents
